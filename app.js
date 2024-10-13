@@ -6,8 +6,12 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use('/users', usersRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Server listen on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`Server listen on http://localhost:${PORT}`);
+  });
+}
 
-module.exports = {app}
+module.exports = {
+  app
+}
