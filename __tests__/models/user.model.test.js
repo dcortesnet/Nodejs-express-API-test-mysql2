@@ -1,5 +1,3 @@
-const request = require("supertest");
-const { app } = require("../../app");
 const UserModel = require("../../src/models/user.model");
 const { pool } = require("../../db");
 
